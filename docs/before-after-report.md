@@ -4,10 +4,9 @@
 **Report updated**: 2026-10-20 (Europe/Budapest).
 **State**: The mandatory technical experiment is complete; external pair feedback is pending.
 **Demonstration lead**: Aleksa Durutovic; Igor led last week.
-**Format check**: This report covers the required content in the weekly assignment. The
-separate official "Šablon za izveštaj pre/posle" has not been supplied, so alignment with
-that template remains unverified. This is the pair's shared report; each learner submits
-their own individual weekly report alongside it.
+**Format**: Before/after report covering the weekly assignment's required content.
+Aleksa confirmed on 2026-10-20 that this is the intended report template. This is the
+pair's shared report; each learner submits their own individual weekly report alongside it.
 
 **Repository**: [SITA-week-7](https://github.com/aleksa-durutovic/SITA-week-7).
 **Implementation commit**: [57d7aca](https://github.com/aleksa-durutovic/SITA-week-7/commit/57d7aca42a84782be28b8fcaa4c83167a1ed5d7c).

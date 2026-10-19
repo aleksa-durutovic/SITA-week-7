@@ -35,7 +35,8 @@ The measured result was 9/12 passed, with E04, E06 and E09 fixed and no regressi
 
 The user confirmed that both the user and Igor inspected the E04 after answer and citation
 and found them correct. This report records that confirmation without inventing separate
-review comments or additional contributions. External pair feedback, the official template,
-and the learners' individual report details remain pending. Do not present the assistant's
+review comments or additional contributions. Aleksa confirmed on 2026-10-20 that the
+existing before/after format is the intended report template. External pair feedback and
+the learners' individual report details remain pending. Do not present the assistant's
 hypothesis as proof; use the saved measurements and disclose the remaining E05, E10 and E11
 failures.
