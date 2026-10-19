@@ -1,0 +1,24 @@
+{
+  "package_revision": "v1",
+  "created_on": "2026-10-19",
+  "state": "PROPOSED_AWAITING_USER_APPROVAL",
+  "purpose": "Initial artifact hashes for user review; verify before first code edit. Later completion markers in tasks.md are permitted, but material plan changes need renewed approval.",
+  "files": {
+    "AGENTS.md": "a428e5b6324c542561dc010d8ca702555d5dcdd88819a23477baf97bc9255eb5",
+    ".specify/memory/constitution.md": "2f2805286e42c6b9ce99ac050ce408b558a69c2c5552fc8c51c2849265dc04d5",
+    ".specify/workflows/speckit/workflow.yml": "ea9baab71e82449ad74945265f326981adb61375c8b8727559f23849f2defcd8",
+    "specs/001-sentence-chunking/spec.md": "875e56d2c3e2bae5e31cd464b53ebb4e4d69003c034863e2dbaf03aefc534d20",
+    "specs/001-sentence-chunking/plan.md": "d3014d1e8decec30f2d206c0c8d9928821a50c441c34b8d6611e7f8e51f5cd41",
+    "specs/001-sentence-chunking/tasks.md": "5211f5dc54f93c61932df42a7dfc677a8b48c0f55d74e29d25590c0389c844de",
+    "specs/001-sentence-chunking/research.md": "cc4a6dfad57c6d3a236bdc453b1c6e8fd1e0d8111c5c6b33e9402cc5d07f2ef3",
+    "specs/001-sentence-chunking/data-model.md": "40d0f007cfaf064b9d384e557705f53438757d50a75712436cae4a198f5063d6",
+    "specs/001-sentence-chunking/contracts/chunking.md": "d745ffd7b837b5b6484dc214f124d6a5c5d8f2a24260f25377e67cd639a4e967",
+    "specs/001-sentence-chunking/quickstart.md": "d2624be4046ba9f1e23b19929fed9f1cef9b14b84210df453a6d99fc4207bc81",
+    "specs/001-sentence-chunking/implementation-prompt.md": "cd2044bafe2c7e1f4eae007494426df9a8db1fa3777532452a3d05dbbf4b8fc9",
+    "docs/baseline-findings.md": "97b01099105a542b9d50de3c52f7db312cac21011715e2d87706e6d130bb16fe",
+    "docs/team-workflow.md": "13a417f9b74b98987f341a71f92649779f0621a53817802f5b1ebfc5bdcffb91",
+    "results/before.json": "8a64532e7b67eff3055b018d11b9eb41ba60dd4a727d3dbbb30645c8a30928f1",
+    "results/E04-before-cli.txt": "ea559b2fb9a337b24dc5608ae0e1982d78daa541fe6cb17e53f22ca350acec8c",
+    "results/E09-before-cli.txt": "1eb49d3bf19ad289b87d12a8ace5a81fe8a97ada7ac14291408c481185e06f4a"
+  }
+}

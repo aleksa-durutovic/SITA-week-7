@@ -1,0 +1,247 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-8.3.3, pluggy-1.7.0
+rootdir: C:\Users\AleksA\Documents\ChatGPT\week-7
+collected 12 items
+
+tests\test_sentence_chunking.py FFFFFFFFFF.F                             [100%]
+
+================================== FAILURES ===================================
+____ test_sentence_split_rejects_nonpositive_size_even_for_empty_text[-0] _____
+
+text = '', chunk_size = 0
+
+    @pytest.mark.parametrize("chunk_size", [0, -1])
+    @pytest.mark.parametrize("text", ["", "   \t\n"])
+    def test_sentence_split_rejects_nonpositive_size_even_for_empty_text(
+        text: str, chunk_size: int
+    ) -> None:
+        with pytest.raises(ValueError, match="chunk_size must be > 0"):
+>           chunking.split_text_by_sentences(text, chunk_size=chunk_size)
+
+tests\test_sentence_chunking.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '', chunk_size = 0
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+____ test_sentence_split_rejects_nonpositive_size_even_for_empty_text[--1] ____
+
+text = '', chunk_size = -1
+
+    @pytest.mark.parametrize("chunk_size", [0, -1])
+    @pytest.mark.parametrize("text", ["", "   \t\n"])
+    def test_sentence_split_rejects_nonpositive_size_even_for_empty_text(
+        text: str, chunk_size: int
+    ) -> None:
+        with pytest.raises(ValueError, match="chunk_size must be > 0"):
+>           chunking.split_text_by_sentences(text, chunk_size=chunk_size)
+
+tests\test_sentence_chunking.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '', chunk_size = -1
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+_ test_sentence_split_rejects_nonpositive_size_even_for_empty_text[   \t\n-0] _
+
+text = '   \t\n', chunk_size = 0
+
+    @pytest.mark.parametrize("chunk_size", [0, -1])
+    @pytest.mark.parametrize("text", ["", "   \t\n"])
+    def test_sentence_split_rejects_nonpositive_size_even_for_empty_text(
+        text: str, chunk_size: int
+    ) -> None:
+        with pytest.raises(ValueError, match="chunk_size must be > 0"):
+>           chunking.split_text_by_sentences(text, chunk_size=chunk_size)
+
+tests\test_sentence_chunking.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '   \t\n', chunk_size = 0
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+_ test_sentence_split_rejects_nonpositive_size_even_for_empty_text[   \t\n--1] _
+
+text = '   \t\n', chunk_size = -1
+
+    @pytest.mark.parametrize("chunk_size", [0, -1])
+    @pytest.mark.parametrize("text", ["", "   \t\n"])
+    def test_sentence_split_rejects_nonpositive_size_even_for_empty_text(
+        text: str, chunk_size: int
+    ) -> None:
+        with pytest.raises(ValueError, match="chunk_size must be > 0"):
+>           chunking.split_text_by_sentences(text, chunk_size=chunk_size)
+
+tests\test_sentence_chunking.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '   \t\n', chunk_size = -1
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+___________ test_sentence_split_returns_no_chunks_for_empty_text[] ____________
+
+text = ''
+
+    @pytest.mark.parametrize("text", ["", " \t\n  "])
+    def test_sentence_split_returns_no_chunks_for_empty_text(text: str) -> None:
+>       assert chunking.split_text_by_sentences(text, chunk_size=10) == []
+
+tests\test_sentence_chunking.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '', chunk_size = 10
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+________ test_sentence_split_returns_no_chunks_for_empty_text[ \t\n  ] ________
+
+text = ' \t\n  '
+
+    @pytest.mark.parametrize("text", ["", " \t\n  "])
+    def test_sentence_split_returns_no_chunks_for_empty_text(text: str) -> None:
+>       assert chunking.split_text_by_sentences(text, chunk_size=10) == []
+
+tests\test_sentence_chunking.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ' \t\n  ', chunk_size = 10
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+______ test_sentence_split_normalizes_whitespace_and_retains_punctuation ______
+
+    def test_sentence_split_normalizes_whitespace_and_retains_punctuation() -> None:
+        text = "  First\t sentence.\nSecond sentence!  Third?  Final words  "
+    
+>       chunks = chunking.split_text_by_sentences(text, chunk_size=100)
+
+tests\test_sentence_chunking.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '  First\t sentence.\nSecond sentence!  Third?  Final words  '
+chunk_size = 100
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+_________ test_sentence_split_packs_exact_fit_including_joining_space _________
+
+    def test_sentence_split_packs_exact_fit_including_joining_space() -> None:
+>       assert chunking.split_text_by_sentences("A. BB.", chunk_size=6) == ["A. BB."]
+
+tests\test_sentence_chunking.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'A. BB.', chunk_size = 6
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+_______ test_sentence_split_keeps_overlong_sentence_alone_and_in_order ________
+
+    def test_sentence_split_keeps_overlong_sentence_alone_and_in_order() -> None:
+        text = "Short. This sentence is longer than ten. End."
+    
+>       chunks = chunking.split_text_by_sentences(text, chunk_size=10)
+
+tests\test_sentence_chunking.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'Short. This sentence is longer than ten. End.', chunk_size = 10
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+_____ test_sentence_split_preserves_unpunctuated_tail_without_duplication _____
+
+    def test_sentence_split_preserves_unpunctuated_tail_without_duplication() -> None:
+        text = "First sentence. Final words without punctuation"
+    
+>       chunks = chunking.split_text_by_sentences(text, chunk_size=18)
+
+tests\test_sentence_chunking.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'First sentence. Final words without punctuation', chunk_size = 18
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+______ test_sentence_strategy_builds_deterministic_chunks_with_metadata _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000013318124FB0>
+
+    def test_sentence_strategy_builds_deterministic_chunks_with_metadata(
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        document = Document(
+            doc_id="hb-test",
+            title="Test handbook",
+            section="Testing",
+            version="2026",
+            status="current",
+            text="First. Second sentence.",
+        )
+        monkeypatch.setattr(config, "CHUNK_STRATEGY", "sentences")
+        monkeypatch.setattr(config, "CHUNK_SIZE", 8)
+    
+>       first_run = chunking.build_chunks([document])
+
+tests\test_sentence_chunking.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\chunking.py:60: in build_chunks
+    for i, part in enumerate(split_text(doc.text)):
+src\chunking.py:53: in split_text
+    return split_text_by_sentences(text, chunk_size=config.CHUNK_SIZE)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'First. Second sentence.', chunk_size = 8
+
+    def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+>       raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+E       NotImplementedError: CHUNK_STRATEGY = "sentences" is not implemented yet.
+
+src\chunking.py:46: NotImplementedError
+=========================== short test summary info ===========================
+FAILED tests/test_sentence_chunking.py::test_sentence_split_rejects_nonpositive_size_even_for_empty_text[-0]
+FAILED tests/test_sentence_chunking.py::test_sentence_split_rejects_nonpositive_size_even_for_empty_text[--1]
+FAILED tests/test_sentence_chunking.py::test_sentence_split_rejects_nonpositive_size_even_for_empty_text[   \t\n-0]
+FAILED tests/test_sentence_chunking.py::test_sentence_split_rejects_nonpositive_size_even_for_empty_text[   \t\n--1]
+FAILED tests/test_sentence_chunking.py::test_sentence_split_returns_no_chunks_for_empty_text[]
+FAILED tests/test_sentence_chunking.py::test_sentence_split_returns_no_chunks_for_empty_text[ \t\n  ]
+FAILED tests/test_sentence_chunking.py::test_sentence_split_normalizes_whitespace_and_retains_punctuation
+FAILED tests/test_sentence_chunking.py::test_sentence_split_packs_exact_fit_including_joining_space
+FAILED tests/test_sentence_chunking.py::test_sentence_split_keeps_overlong_sentence_alone_and_in_order
+FAILED tests/test_sentence_chunking.py::test_sentence_split_preserves_unpunctuated_tail_without_duplication
+FAILED tests/test_sentence_chunking.py::test_sentence_strategy_builds_deterministic_chunks_with_metadata
+======================== 11 failed, 1 passed in 0.16s =========================

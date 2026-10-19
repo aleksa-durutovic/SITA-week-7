@@ -1,0 +1,63 @@
+diff --git a/C:/Users/AleksA/Desktop/rag-week-7-weak-checkpoint/rag-week-7-weak-checkpoint/src/chunking.py b/src/chunking.py
+index 5ae53cf..77fdf63 100644
+--- a/C:/Users/AleksA/Desktop/rag-week-7-weak-checkpoint/rag-week-7-weak-checkpoint/src/chunking.py
++++ b/src/chunking.py
+@@ -1,4 +1,5 @@
+ from dataclasses import dataclass
++import re
+ 
+ from . import config
+ from .corpus import Document
+@@ -43,7 +44,38 @@ def split_text_with_overlap(text: str, chunk_size: int = 140, overlap: int = 30)
+ 
+ 
+ def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
+-    raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
++    """Greedily pack complete normalized sentences up to ``chunk_size``."""
++    if chunk_size <= 0:
++        raise ValueError("chunk_size must be > 0")
++
++    cleaned = " ".join(text.split())
++    if not cleaned:
++        return []
++
++    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
++    chunks: list[str] = []
++    current = ""
++
++    for sentence in sentences:
++        if len(sentence) > chunk_size:
++            if current:
++                chunks.append(current)
++                current = ""
++            chunks.append(sentence)
++            continue
++
++        if not current:
++            current = sentence
++        elif len(current) + 1 + len(sentence) <= chunk_size:
++            current = f"{current} {sentence}"
++        else:
++            chunks.append(current)
++            current = sentence
++
++    if current:
++        chunks.append(current)
++
++    return chunks
+ 
+ 
+ def split_text(text: str) -> list[str]:
+diff --git a/C:/Users/AleksA/Desktop/rag-week-7-weak-checkpoint/rag-week-7-weak-checkpoint/src/config.py b/src/config.py
+index 1e4e222..0b827d9 100644
+--- a/C:/Users/AleksA/Desktop/rag-week-7-weak-checkpoint/rag-week-7-weak-checkpoint/src/config.py
++++ b/src/config.py
+@@ -4,7 +4,7 @@ The eval runner records every value in this module in its JSON output.
+ """
+ 
+ # Chunking
+-CHUNK_STRATEGY = "chars"  # "chars" or "sentences"
++CHUNK_STRATEGY = "sentences"  # "chars" or "sentences"
+ CHUNK_SIZE = 140
+ CHUNK_OVERLAP = 30
+ 

@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import re
 
 from . import config
 from .corpus import Document
@@ -43,7 +44,38 @@ def split_text_with_overlap(text: str, chunk_size: int = 140, overlap: int = 30)
 
 
 def split_text_by_sentences(text: str, chunk_size: int = 140) -> list[str]:
-    raise NotImplementedError('CHUNK_STRATEGY = "sentences" is not implemented yet.')
+    """Greedily pack complete normalized sentences up to ``chunk_size``."""
+    if chunk_size <= 0:
+        raise ValueError("chunk_size must be > 0")
+
+    cleaned = " ".join(text.split())
+    if not cleaned:
+        return []
+
+    sentences = re.split(r"(?<=[.!?])\s+", cleaned)
+    chunks: list[str] = []
+    current = ""
+
+    for sentence in sentences:
+        if len(sentence) > chunk_size:
+            if current:
+                chunks.append(current)
+                current = ""
+            chunks.append(sentence)
+            continue
+
+        if not current:
+            current = sentence
+        elif len(current) + 1 + len(sentence) <= chunk_size:
+            current = f"{current} {sentence}"
+        else:
+            chunks.append(current)
+            current = sentence
+
+    if current:
+        chunks.append(current)
+
+    return chunks
 
 
 def split_text(text: str) -> list[str]:
